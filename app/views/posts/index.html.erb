@@ -1,0 +1,18 @@
+<%= content_for(:page_title, 'Lista de postagens') %>
+
+<div class="section">
+	<div class="container">
+		<% @posts.each do |post| %>
+			<div class="card">
+				<div class="card-content">
+					<p class="title">
+						<%= link_to post.title, post_path(post) %>
+					</p>
+					<div class="comment-count">
+						<span class="tag is-rouded"><%= post.comments.count %> comentários</span>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

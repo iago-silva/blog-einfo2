@@ -1,0 +1,14 @@
+<% @post.comments.each do |comment| %>
+	<div class="box">
+		<div class="media">
+			<div class="media-content">
+				<p>
+					<strong><%= comment.name %>:</strong>
+					<%= comment.comment %>
+				</p>
+			</div>
+
+			<%= link_to 'Deletar', post_comment_path(@post, comment), class: 'button is-danger', method: :delete, data: { confirm: 'Tem certeza?' } %>
+		</div>
+	</div>
+<% end %>
