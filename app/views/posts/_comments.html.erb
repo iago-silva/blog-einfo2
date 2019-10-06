@@ -3,12 +3,14 @@
 		<div class="media">
 			<div class="media-content">
 				<p>
-					<strong><%= comment.name %>:</strong>
+					<strong><%= comment.user.email %>:</strong>
 					<%= comment.comment %>
 				</p>
 			</div>
 
-			<%= link_to 'Deletar', post_comment_path(@post, comment), class: 'button is-danger', method: :delete, data: { confirm: 'Tem certeza?' } %>
+			<% if comment.user == current_user %>
+				<%= link_to 'Deletar', post_comment_path(@post, comment), class: 'button is-danger', method: :delete, data: { confirm: 'Tem certeza?' } %>
+			<% end %>
 		</div>
 	</div>
 <% end %>

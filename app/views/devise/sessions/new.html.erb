@@ -1,0 +1,27 @@
+<% content_for(:page_title, 'Login') %>
+
+<div class="section">
+  <div class="container">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.input :email,
+                    label: 'E-mail',
+                    input_html: { class: 'input' }, 
+                    wrapper: false, 
+                    label_html: { class: 'label' } %>
+      </div>
+      <div class="field">
+        <%= f.input :password, 
+                    label: 'Senha',
+                    input_html: { class: 'input' }, 
+                    wrapper: false, 
+                    label_html: { class: 'label' } %>
+      </div>
+
+      <div class="level">
+        <%= f.submit 'Entrar', class: 'button is-primary' %>
+        <%= link_to 'Cadastre-se', new_user_registration_path %>
+      </div>
+    <% end %>
+  </div>
+</div>

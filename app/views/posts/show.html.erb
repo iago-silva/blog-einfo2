@@ -1,24 +1,28 @@
 <% content_for(:page_title, @post.title) %>
+<% content_for(:page_subtitle, @post.user.email) %>
 
 <div class="section">
 	<div class="container">
-		<div class="level">
-			<div class="level-left">
-				<p class="level-item"><strong>Ações</strong></p>
-			</div>
-			<div class="level-right">
-				<div class="level-item">
-					<%= link_to 'Editar', edit_post_path(@post), class: 'button is-primary' %>
+		<% if @post.user == current_user %>
+			<div class="level">
+				<div class="level-left">
+					<p class="level-item"><strong>Ações</strong></p>
 				</div>
-				<div class="level-item">
-					<%= link_to 'Deletar', 
-						post_path(@post), 
-						class: 'button is-danger', 
-						method: :delete,
-						data: { confirm: 'Você tem certeza?' } %>
+				<div class="level-right">
+					<div class="level-item">
+						<%= link_to 'Editar', edit_post_path(@post), class: 'button is-primary' %>
+					</div>
+					<div class="level-item">
+						<%= link_to 'Deletar', 
+							post_path(@post), 
+							class: 'button is-danger', 
+							method: :delete,
+							data: { confirm: 'Você tem certeza?' } %>
+					</div>
 				</div>
 			</div>
-		</div>
+		<% end %>
+		
 		<div class="content">
 			<%= @post.content %>
 		</div>

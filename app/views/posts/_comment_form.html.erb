@@ -1,12 +1,5 @@
 <%= simple_form_for @comment, url: post_comments_path(@post) do |f| %>
 	<div class="field">
-		<%= f.input :name,
-					label: 'Nome',
-		            input_html: { class: 'input' }, 
-					wrapper: false, 
-					label_html: { class: 'label' } %>
-	</div>
-	<div class="field">
 		<%= f.input :comment, 
 					label: 'Comentário',
 		            input_html: { class: 'textarea' }, 

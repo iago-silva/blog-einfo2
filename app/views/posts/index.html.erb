@@ -8,6 +8,9 @@
 					<p class="title">
 						<%= link_to post.title, post_path(post) %>
 					</p>
+					<div class="subtitle is-6">
+						<%= post.user.email %>
+					</div>
 					<div class="comment-count">
 						<span class="tag is-rouded"><%= post.comments.count %> comentários</span>
 					</div>
