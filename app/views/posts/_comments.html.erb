@@ -9,7 +9,11 @@
 			</div>
 
 			<% if comment.user == current_user %>
-				<%= link_to 'Deletar', post_comment_path(@post, comment), class: 'button is-danger', method: :delete, data: { confirm: 'Tem certeza?' } %>
+				<%= link_to 'Deletar',
+				            post_comment_path(@post, comment),
+				            class: 'button is-danger',
+				            method: :delete,
+				            data: { confirm: 'Tem certeza?' } %>
 			<% end %>
 		</div>
 	</div>

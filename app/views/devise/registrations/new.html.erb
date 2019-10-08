@@ -2,28 +2,28 @@
 
 <div class="section">
   <div class="container">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-
+    <%= simple_form_for(resource,
+                        as: resource_name,
+                        url: registration_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.input :email,
                     label: 'E-mail',
-                    input_html: { class: 'input' }, 
-                    wrapper: false, 
+                    input_html: { class: 'input' },
+                    wrapper: false,
                     label_html: { class: 'label' } %>
       </div>
       <div class="field">
-        <%= f.input :password, 
+        <%= f.input :password,
                     label: 'Senha',
-                    input_html: { class: 'input' }, 
-                    wrapper: false, 
+                    input_html: { class: 'input' },
+                    wrapper: false,
                     label_html: { class: 'label' } %>
       </div>
       <div class="field">
-        <%= f.input :password_cofirmation, 
-                    label: 'Senha',
-                    input_html: { class: 'input' }, 
-                    wrapper: false, 
+        <%= f.input :password_cofirmation,
+                    label: 'Confirmação da senha',
+                    input_html: { class: 'input' },
+                    wrapper: false,
                     label_html: { class: 'label' } %>
       </div>
 
