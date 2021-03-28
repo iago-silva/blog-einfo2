@@ -4,7 +4,4 @@ default: &default
 development:
   <<: *default
   database: blog-einfo_development
-
-production:
-  <<: *default
-  database: blog-einfo_production
+  
